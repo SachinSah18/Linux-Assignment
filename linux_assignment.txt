@@ -1,0 +1,348 @@
+# linux practice assignment
+# submitted by : Sachin Kumar
+# emaid id : sachinsayu388@gmail.com
+# total task : 8
+# course : cloud & devops
+
+// task name with commands and output //
+
+task 1 : - Navigation & Directories
+
+ (A) Check Current Directory
+    Command:
+         pwd
+
+    Output :-  /home/sachin
+
+(B) List Root
+   Command:
+         ls /
+
+    Output :-  bin boot dev home temp sbin etc
+
+(C) Go to home directory
+    Command:
+         cd /home/sachin
+
+     Output :- alert_info.sh  Desktop  Documents  file3.txt  project.sh  system_alert.sh  etc
+
+(D) Create devops_practice directory
+     Command:
+         mkdir devops_practice
+
+// and check devops_practice directory created or not //
+    Command:
+          ls
+
+Output :- devops_practice
+
+(E) Go to devops_practice directory
+     Command:
+           cd devops_practice
+
+    Output :- devops_practice
+
+(F) Create three text files
+    Command:
+          touch file1.txt file2.txt file3.txt
+
+// and check text files created or not //
+        Command:
+               ls
+
+    Output :- file1.txt  file2.txt  file3.txt
+
+
+
+task 2 : - File Operations
+
+ (A) Create logs directory
+      Command:
+           mkdir logs
+
+// and check logs directory created or not //
+          Command:
+                  ls
+
+    Output : - logs
+
+ (B) Move file into logs
+     Command:
+          mv file1.txt logs
+
+// and check move file1.txt in logs directory //
+         Command:
+                ls
+
+Output : - file2.txt  file3.txt  logs
+
+(C) Rename file2.txt to config.txt
+     Command:
+         mv file2.txt config.txt
+
+// and check Rename file2.txt to config.txt //
+         Command:
+                ls
+
+Output : - config.txt  file3.txt  logs
+
+
+(D) Copy file3.txt to backup.txt
+     Command:
+           cp file3.txt backup.txt
+
+// and check copy file3.txt to backup.txt //
+         Command:
+                ls
+
+
+Output : - backup.txt   config.txt  file3.txt  logs
+
+(E) Delete logs folder
+    Command:
+         rm -r logs
+
+// and check delete in logs folder //
+
+
+Output : - backup.txt  config.txt  file3.txt  
+
+
+
+task 3 : - File Content
+
+// and check file & folder/directory //
+        Command:
+               ls
+
+Output : - backup.txt  config.txt  file3.txt
+
+(A) Edit config.txt using nano
+    Command:
+           nano config.txt
+
+// and view config.txt file //
+         Command:
+               cat config.txt
+
+
+Output : -  the config.txt file in devops_practice folder.
+                   the sample text of config.txt file.
+
+
+(B) show first line of config.txt
+    Command:
+          head -n 1 config.txt
+
+
+Output : -  the config.txt file in devops_practice folder.
+
+
+(C) Show last line of config.txt
+    Command:
+        tail -n 1 config.txt
+
+
+Output : -  the sample text of config.txt file.
+
+
+
+task 4 : - permissions
+
+
+(A) list files in long format
+    Command:
+           ls -l
+
+Output : -  total 4
+                    -rw-rw-r- - 1 sachin sachin 0 jan 28 22:57 backup.txt
+                   -rw-rw-r- - 1 sachin sachin 83 jan 28 23:06 config.txt
+                  -rw-rw-r- - 1 sachin sachin 0 jan 28 22:50 file3.txt
+
+
+(B) Remove read permission from group and others
+    Command:
+        chmod g-r config.txt
+        chmod o-r config.txt
+
+// and check remove read permission from group and others //
+      Command:
+            ls
+
+
+Output : - backup.txt  config.txt  file3.txt
+
+
+
+task 5 : - Search & Find
+
+(A) Search DevOps file3.txt
+    Command:
+           grep DevOps file3.txt
+
+
+Output : -  DevOps is a combination of Development and Operations in IT field.
+
+
+(B) Move to parent directory
+    Command:
+          cd ..
+
+Output : - /home
+
+// and check move to parent directory //
+         Command:
+                ls
+
+Output : - sachin
+
+
+(C) Search config.txt system-wide
+    Command:
+        find  /  -type  f  -name  config.txt  2>/dev/null
+
+
+Output : -  /home/sachin/devops_practice/config.txt
+
+
+
+task 6 : - System Info
+
+(A) show current user
+    Command:
+          whoami
+
+Output : -  sachin
+
+// and show current user //
+       Command:
+              ls
+ 
+Output : - sachin
+
+
+(B) Show system hostname
+    Command:
+         hostname
+
+Output : -  Sachin-PC
+
+
+(C) Show Running Processes
+    Command:
+           top
+
+Output : -  PID USER | PR |  NI | VIRT | RES  SHR S | %CPU | %MEM | TIME+ | COMMAND
+
+
+(D) Show disk usage
+    Command:
+             df
+
+Output : -  Filesystem    1K-blocks   Used   Available 
+Use%   Mounted on
+
+
+(E) show memory usage
+    Command:
+           free
+
+
+Output : -           total  used  free  shared  buff/cache  available
+               mem:   4009812  1692444  1050764  45504  1599396  2317368
+              swap:   4008956  0  4008956
+
+
+
+task 7 : - Archive & Compress 
+
+
+(A) Compress devops_practice into tar file
+     Command:
+         tar  -cvf  devops_practice.tar  devops_practice
+
+
+Output : -  devops_practice/
+                   devops_practice/config.txt
+                   devops_practice/backup.txt
+                   devops_practice/file3.txt
+
+
+(B) Compress devops_practice.tar using gzip
+    Command:
+         gzip devops_practice.tar
+
+
+// and check compress devops_practice.tar using gzip //
+         Command:
+                 ls
+
+
+Output : - devops_practice.tar.gz
+
+
+
+(C) Extract devops_practice.tar.gz archive
+    Command:
+          tar -xvf devops_practice.tar.gz
+
+
+
+Output : - devops_practice/
+                  devops_practice/config.txt
+                  devops_practice/backup.txt
+                  devops_practice/file3.txt
+
+
+
+task 8 : - Networking
+
+
+(A) Show system IP address
+    Command:
+           hostname  -I
+
+
+Output : - 10.0.2.15  fd17:625c:f037:c4ee:658c:9488:3500   fd17:625c:f037:2:a00:27ff:fe16:eb1
+
+
+(B) ping google.com 5 times
+    Command:
+         ping  -c  5 google.com
+
+
+Output : - PING google.com  (142.250.193.78)  56(84) bytes of data.
+
+
+(C) Lookup google.com IP address
+    Command:
+            nslookup google.com
+
+
+Output : -  Server:        127.0.0.53
+                   Address:     127.0.0.53#53
+
+
+Non-authoritative answer:
+Name:   google.com
+Address:  142.250.193.78
+Name:    google.com
+Address:     2404:6800:4002:824::200e                 
+
+
+
+
+
+
+
+           
+         
+
+
+
+
+
+
+
+
+
